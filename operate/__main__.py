@@ -276,7 +276,7 @@ def tapes_menu(operator: Operator, place: MusicPlace, op):
         slug = slugify(title)
         song = place.make_song(slug)
         song.tape.mkdir()
-        operator.tape.copy_to(song)
+        operator.tape.copy_to(song.tape)
     elif op == "restore":
         desired_song = prompt({
                 'type': 'list',
