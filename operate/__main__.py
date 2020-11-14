@@ -191,6 +191,8 @@ def preview_menu(source, should_preview=False):
         return True
 
 def albums_menu(operator: Operator, place: MusicPlace, op):
+    if op == "cancel":
+        return
     if op == "save":
         side = get_side(operator)
         source = side
@@ -263,6 +265,8 @@ def albums_menu(operator: Operator, place: MusicPlace, op):
 
 
 def tapes_menu(operator: Operator, place: MusicPlace, op):
+    if op == "cancel":
+        return
     if op == "save":
         title = prompt({
             'type': 'input',
@@ -285,6 +289,8 @@ def tapes_menu(operator: Operator, place: MusicPlace, op):
 
 
 def instrument_menu(operator_instrument: InstrumentDir, place_instrument: InstrumentDir, op):
+    if op == "cancel":
+        return
     if op == "save":
         collection_choices = list(operator_instrument.collection_names())
         collection = prompt({
@@ -386,7 +392,7 @@ def get_op():
         'type': 'list',
         'name': 'op',
         'message': 'what would you like to do?',
-        'choices': ['save', 'restore']
+        'choices': ['save', 'restore', 'cancel']
     })['op']
 
 
