@@ -218,7 +218,7 @@ def albums_menu(operator: Operator, place: MusicPlace, op):
             {
                 'type': 'confirm',
                 'name': 'upload?',
-                'message': 'upload? (to chee@snoot.club:music)'
+                'message': 'upload? (to yay@chee.party:music)'
             }
         ])
         title = answers['title']
